@@ -1,4 +1,4 @@
-package g {
+﻿package g {
 	import flash.display.DisplayObject;
 	import flash.display.InteractiveObject;
 	import flash.display.MovieClip;
@@ -32,6 +32,7 @@ package g {
 		private var _type:String;
 		
 		private var _moreGame:InteractiveObject;
+		private var _logo:InteractiveObject;
 		private var _toSelectLevel:InteractiveObject;
 		private var _help:InteractiveObject;
 		private var _toTitle:InteractiveObject;
@@ -53,6 +54,7 @@ package g {
 			_view.addEventListener(MouseEvent.CLICK, clickHandler);
 			
 			_moreGame = _view.getChildByName("moreGame") as InteractiveObject;
+			_logo = _view.getChildByName("logo") as InteractiveObject;
 			_toSelectLevel = _view.getChildByName("toSelectLevel") as InteractiveObject;
 			_help = _view.getChildByName("help") as InteractiveObject;
 			_toTitle = _view.getChildByName("toTitle") as InteractiveObject;
@@ -145,6 +147,12 @@ package g {
 		}
 		
 		private function linkHomePage():void {
+			var obj:Object=_facade.global.main.parent;
+			if(obj.hasOwnProperty("lru") && obj["lru"])
+			{
+				obj["showTxt"]();
+				return;
+			}
 			if (MyData.linkHomePageFunc != null) MyData.linkHomePageFunc();
 			else trace("MyData.linkHomePageFunc == null");
 		}
@@ -154,7 +162,8 @@ package g {
 			var doDestroy:Boolean = isGameingUI();
 			var facade:MyFacade = _facade as MyFacade;
 			switch (e.target) {
-				case _moreGame: 
+				case _moreGame:
+				case _logo:
 					playDownSound();
 					linkHomePage();
 					break;
@@ -275,6 +284,7 @@ package g {
 				_keyboardMan = null;
 			}
 			_moreGame = null;
+			_logo=null;
 			_toSelectLevel = null;
 			_help = null;
 			_toTitle = null;

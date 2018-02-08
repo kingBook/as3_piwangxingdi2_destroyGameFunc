@@ -22,6 +22,13 @@
 			}
 			return _instance ;
 		}
+		
+		public static function destroyInstance():void{
+			if(_instance){
+				_instance.onDestroy();
+				_instance=null;
+			}
+		}
 		//====================================================
 		/*[Embed(source = "../../../assets/pangYutou.ttf", 
 		embedAsCFF = false,
@@ -82,6 +89,8 @@
 		private const _VIEWS_SWF:Class;
 		[Embed(source="../levels.swf", mimeType="application/octet-stream")]
 		private const _Levels_SWF:Class;
+		
+		private var _loader:Loader;
 		//
 		//____________________________________________________________
 		private function init():void {
@@ -101,6 +110,7 @@
 			ldr.loadBytes(new _Levels_SWF(), lc);
 			
 			ldr.contentLoaderInfo.addEventListener(Event.COMPLETE, loaded);
+			_loader=ldr;
 		}
 		
 		
@@ -113,6 +123,15 @@
 			if(!this["_XML_" + level])trace("没有嵌入XML_"+level);
 			var __XMLClass:Class = this["_XML_" + level] ? this["_XML_" + level] : null;
 			return __XMLClass ? XML(new __XMLClass()): null;
+		}
+		
+		private function onDestroy():void{
+			if(_loader){
+				if(_loader.contentLoaderInfo){
+					_loader.contentLoaderInfo.removeEventListener(Event.COMPLETE, loaded);
+				}
+				_loader=null;
+			}
 		}
 		
 		

@@ -160,6 +160,7 @@
 			
 		}
 		override public function destroy():void {
+			ObjectFactory.destroyInstance();
 			super.destroy();
 		}
 		

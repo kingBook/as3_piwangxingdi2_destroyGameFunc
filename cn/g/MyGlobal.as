@@ -8,6 +8,8 @@
 	import framework.system.Global;
 	import framework.utils.FuncUtil;
 	import kingBook.Player;
+	import framework.namespaces.frameworkInternal;
+	use namespace frameworkInternal;
 	
 	/**
 	 * ...
@@ -77,6 +79,14 @@
 			if(_curWorld==value)return;
 			value.SetContactListener(new MyContactListener());
 			super.setCurWorld(value);
+		}
+		
+		override frameworkInternal function onDestroy():void{
+			FuncUtil.removeChild(_renderer);
+			_renderer = null;
+			_allCtrlObjList=null;
+			_resetPointList=null;
+			super.onDestroy();
 		}
 		
 		public function get allCtrlObjList():Array { return _allCtrlObjList; }

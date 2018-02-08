@@ -38,6 +38,17 @@
 		}
 		private static var _instance:ObjectFactory;
 		public static function get instance():ObjectFactory { return _instance||=new ObjectFactory(); }
+		public static function destroyInstance():void{
+			if(_instance){
+				_instance.onDestroy();
+				_instance=null;
+			}
+		}
+		
+		private function onDestroy():void{
+			_myFacade=null;
+			_facade=null;
+		}
 		
 		/**根矩形显示对象创建矩形刚体*/
 		private function createBoxFromChild(child:DisplayObject):b2Body{
@@ -165,11 +176,17 @@
 		}
 		
 		public function createP1(childMc:MovieClip):void{
-			var body:b2Body=Box2dUtil.createRoundBottomBody(childMc.width,childMc.height,childMc.x,childMc.y,5,0.7,_facade.global.curWorld,MyData.pixelToMeter);
+			//var body:b2Body=Box2dUtil.createRoundBottomBody(childMc.width,childMc.height,childMc.x,childMc.y,5,0.7,_facade.global.curWorld,MyData.pixelToMeter);
+			var body:b2Body=Box2dUtil.createRoundBox(childMc.width,childMc.height,childMc.x,childMc.y,_facade.global.curWorld,MyData.pixelToMeter,5,10);
+			body.SetFixedRotation(true);
+			body.SetIsIgnoreFrictionY(true);
 			_facade.createGameObj(new P1(),{body:body});
 		}
 		public function createP2(childMc:MovieClip):void{
-			var body:b2Body=Box2dUtil.createRoundBottomBody(childMc.width,childMc.height,childMc.x,childMc.y,5,0.7,_facade.global.curWorld,MyData.pixelToMeter);
+			//var body:b2Body=Box2dUtil.createRoundBottomBody(childMc.width,childMc.height,childMc.x,childMc.y,5,0.7,_facade.global.curWorld,MyData.pixelToMeter);
+			var body:b2Body=Box2dUtil.createRoundBox(childMc.width,childMc.height,childMc.x,childMc.y,_facade.global.curWorld,MyData.pixelToMeter,5,10);
+			body.SetFixedRotation(true);
+			body.SetIsIgnoreFrictionY(true);
 			_facade.createGameObj(new P2(),{body:body});
 		}
 		

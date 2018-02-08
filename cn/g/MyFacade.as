@@ -14,6 +14,8 @@
 	import g.MapModel;
 	import g.MapView;
 	import kingBook.ObjectFactory;
+	import framework.namespaces.frameworkInternal;
+	use namespace frameworkInternal;
 	
 	public class MyFacade extends Facade {
 		public function MyFacade() {
@@ -24,6 +26,13 @@
 			if (_instance == null) 
 				_instance = new MyFacade();
 			return MyFacade(_instance);
+		}
+		
+		public static function destroyInstance():void{
+			if(_instance){
+				_instance.onDestroy();
+				_instance=null;
+			}
 		}
 		
 		override public function startup(params:*=null):void{
@@ -150,7 +159,26 @@
 			else TweenMax.resumeAll(true,true);
 		}
 		
+		override frameworkInternal function onDestroy():void{
+			_global.main.removeEventListener(Event.ENTER_FRAME, update);
+			removeEventListener(MyEvent.TO_TITLE, toTitle);
+			removeEventListener(MyEvent.TO_SELECT_LEVEL, toSelectLevel);
+			removeEventListener(MyEvent.TO_HELP, toHelp);
+			removeEventListener(MyEvent.GO_TO_LEVEL, gotoLevel);
+			removeEventListener(MyEvent.WIN, gameWin);
+			removeEventListener(MyEvent.FAILURE, gameFailure);
+			removeEventListener(MyEvent.RESET_LEVEL, resetLevel);
+			removeEventListener(MyEvent.NEXT_LEVEL, nextLevel);
+			removeEventListener(FrameworkEvent.PAUSE,pauseOrResumeHandler);
+			removeEventListener(FrameworkEvent.RESUME,pauseOrResumeHandler);
+			destroyAll();
+			TweenMax.killAll();
+			super.onDestroy();
+		}
+		
 		public function get myGlobal():MyGlobal { return _global as MyGlobal; }
+		
+		
 
 	}
 	

@@ -9,11 +9,14 @@
 	
 	public dynamic class Main extends MovieClip {
 		
+		private var _maskBmp:Bitmap;
 		
 		public function Main() {
 			if(stage)  init();
 			else addEventListener(Event.ADDED_TO_STAGE, init);
+			
 			addEventListener(Event.ENTER_FRAME,enterFrame);
+			addEventListener(Event.REMOVED_FROM_STAGE,removedFromStage);
 		}
 		
 		private function enterFrame(e:Event):void {
@@ -33,6 +36,7 @@
 			var maskBmp:Bitmap = new Bitmap(maskBmd);
 			addChild(maskBmp);
 			mask = maskBmp;
+			_maskBmp=maskBmp;
 		}
 		
 		/**资源加载完成*/
@@ -40,6 +44,21 @@
 			e.target.removeEventListener(Event.COMPLETE, assetsLoaded);
 			//启动
 			MyFacade.getInstance().startup({main:this});
+		}
+		
+		private function removedFromStage(e:Event):void{
+			removeEventListener(Event.REMOVED_FROM_STAGE,removedFromStage);
+			if(_maskBmp){
+				if(_maskBmp.parent){
+					_maskBmp.parent.removeChild(_maskBmp);
+				}
+				if(_maskBmp.bitmapData){
+					_maskBmp.bitmapData.dispose();
+				}
+				_maskBmp=null;
+			}
+			Assets.destroyInstance();
+			MyFacade.destroyInstance();
 		}
 		
 	}
