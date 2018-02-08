@@ -1,0 +1,7 @@
+<bodydef>
+  <bodies numBodies="1">
+    <body>
+      <fixture numPolygons="0"/>
+    </body>
+  </bodies>
+</bodydef>

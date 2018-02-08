@@ -1,0 +1,60 @@
+<bodydef>
+  <bodies numBodies="1">
+    <body>
+      <fixture numPolygons="9">
+        <polygon numVertexes="4">
+          <vertex x="787" y="113.57499999999999"/>
+          <vertex x="1202" y="113.57499999999999"/>
+          <vertex x="1202.625" y="196.95"/>
+          <vertex x="708" y="197.575"/>
+        </polygon>
+        <polygon numVertexes="4">
+          <vertex x="787" y="113.57499999999999"/>
+          <vertex x="708" y="197.575"/>
+          <vertex x="707.375" y="-191.05"/>
+          <vertex x="786.625" y="-191.05"/>
+        </polygon>
+        <polygon numVertexes="3">
+          <vertex x="859" y="527.575"/>
+          <vertex x="353" y="602.575"/>
+          <vertex x="432" y="527.575"/>
+        </polygon>
+        <polygon numVertexes="4">
+          <vertex x="432" y="527.575"/>
+          <vertex x="353" y="602.575"/>
+          <vertex x="352.625" y="380.95"/>
+          <vertex x="431" y="309.575"/>
+        </polygon>
+        <polygon numVertexes="4">
+          <vertex x="431" y="309.575"/>
+          <vertex x="352.625" y="380.95"/>
+          <vertex x="2" y="380.575"/>
+          <vertex x="1.375" y="309.95"/>
+        </polygon>
+        <polygon numVertexes="5">
+          <vertex x="1598" y="602.575"/>
+          <vertex x="353" y="602.575"/>
+          <vertex x="859" y="527.575"/>
+          <vertex x="938.625" y="525.95"/>
+          <vertex x="1598" y="526.575"/>
+        </polygon>
+        <polygon numVertexes="4">
+          <vertex x="938.625" y="525.95"/>
+          <vertex x="859" y="527.575"/>
+          <vertex x="860" y="342.575"/>
+          <vertex x="939" y="420.575"/>
+        </polygon>
+        <polygon numVertexes="3">
+          <vertex x="939" y="420.575"/>
+          <vertex x="860" y="342.575"/>
+          <vertex x="1306" y="342.575"/>
+        </polygon>
+        <polygon numVertexes="3">
+          <vertex x="1306" y="420.575"/>
+          <vertex x="939" y="420.575"/>
+          <vertex x="1306" y="342.575"/>
+        </polygon>
+      </fixture>
+    </body>
+  </bodies>
+</bodydef>

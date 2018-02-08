@@ -1,0 +1,138 @@
+<bodydef>
+  <bodies numBodies="1">
+    <body>
+      <fixture numPolygons="22">
+        <polygon numVertexes="4">
+          <vertex x="50.625" y="518"/>
+          <vertex x="277" y="518.625"/>
+          <vertex x="277" y="602.625"/>
+          <vertex x="-5.375" y="602"/>
+        </polygon>
+        <polygon numVertexes="4">
+          <vertex x="50.625" y="518"/>
+          <vertex x="-5.375" y="602"/>
+          <vertex x="-5.375" y="-114"/>
+          <vertex x="50.625" y="-114"/>
+        </polygon>
+        <polygon numVertexes="3">
+          <vertex x="1181" y="-5.375"/>
+          <vertex x="1001" y="37.375"/>
+          <vertex x="998" y="-5.375"/>
+        </polygon>
+        <polygon numVertexes="5">
+          <vertex x="998" y="-5.375"/>
+          <vertex x="1001" y="37.375"/>
+          <vertex x="1000.625" y="134"/>
+          <vertex x="929" y="134.625"/>
+          <vertex x="929" y="-106.625"/>
+        </polygon>
+        <polygon numVertexes="3">
+          <vertex x="998" y="-5.375"/>
+          <vertex x="929" y="-106.625"/>
+          <vertex x="997" y="-106.625"/>
+        </polygon>
+        <polygon numVertexes="3">
+          <vertex x="1180" y="37.375"/>
+          <vertex x="1001" y="37.375"/>
+          <vertex x="1181" y="-5.375"/>
+        </polygon>
+        <polygon numVertexes="5">
+          <vertex x="1180" y="37.375"/>
+          <vertex x="1181" y="-5.375"/>
+          <vertex x="1250" y="-90.625"/>
+          <vertex x="1250.625" y="147"/>
+          <vertex x="1180.625" y="147"/>
+        </polygon>
+        <polygon numVertexes="3">
+          <vertex x="1250" y="-90.625"/>
+          <vertex x="1181" y="-5.375"/>
+          <vertex x="1181.375" y="-90"/>
+        </polygon>
+        <polygon numVertexes="4">
+          <vertex x="1508" y="107.375"/>
+          <vertex x="1737" y="107.375"/>
+          <vertex x="1737" y="160.625"/>
+          <vertex x="1508" y="160.625"/>
+        </polygon>
+        <polygon numVertexes="5">
+          <vertex x="330.625" y="312"/>
+          <vertex x="571" y="311.375"/>
+          <vertex x="631.375" y="315"/>
+          <vertex x="606" y="367.375"/>
+          <vertex x="331" y="367.375"/>
+        </polygon>
+        <polygon numVertexes="4">
+          <vertex x="606" y="367.375"/>
+          <vertex x="631.375" y="315"/>
+          <vertex x="766" y="520.625"/>
+          <vertex x="608.625" y="370"/>
+        </polygon>
+        <polygon numVertexes="3">
+          <vertex x="608.625" y="370"/>
+          <vertex x="766" y="520.625"/>
+          <vertex x="707.375" y="521"/>
+        </polygon>
+        <polygon numVertexes="5">
+          <vertex x="707.375" y="521"/>
+          <vertex x="766" y="520.625"/>
+          <vertex x="1208" y="521.375"/>
+          <vertex x="1208.625" y="597"/>
+          <vertex x="557" y="597.375"/>
+        </polygon>
+        <polygon numVertexes="3">
+          <vertex x="707.375" y="521"/>
+          <vertex x="557" y="597.375"/>
+          <vertex x="557" y="521.375"/>
+        </polygon>
+        <polygon numVertexes="4">
+          <vertex x="631.375" y="315"/>
+          <vertex x="571" y="311.375"/>
+          <vertex x="660.625" y="176"/>
+          <vertex x="691.375" y="229"/>
+        </polygon>
+        <polygon numVertexes="4">
+          <vertex x="691.375" y="229"/>
+          <vertex x="660.625" y="176"/>
+          <vertex x="734" y="122.625"/>
+          <vertex x="734.625" y="172"/>
+        </polygon>
+        <polygon numVertexes="4">
+          <vertex x="734" y="122.625"/>
+          <vertex x="660.625" y="176"/>
+          <vertex x="219" y="175.375"/>
+          <vertex x="219" y="122.625"/>
+        </polygon>
+        <polygon numVertexes="4">
+          <vertex x="1971" y="155.375"/>
+          <vertex x="2202" y="155.375"/>
+          <vertex x="2202.625" y="211"/>
+          <vertex x="1971" y="211.375"/>
+        </polygon>
+        <polygon numVertexes="4">
+          <vertex x="851.375" y="237"/>
+          <vertex x="1307" y="236.625"/>
+          <vertex x="1307" y="292.625"/>
+          <vertex x="852" y="292.625"/>
+        </polygon>
+        <polygon numVertexes="4">
+          <vertex x="1801" y="325.375"/>
+          <vertex x="2251" y="325.375"/>
+          <vertex x="2251.4812500000003" y="375"/>
+          <vertex x="1801" y="375.375"/>
+        </polygon>
+        <polygon numVertexes="4">
+          <vertex x="1632" y="387.375"/>
+          <vertex x="1475.375" y="388"/>
+          <vertex x="1403" y="332.625"/>
+          <vertex x="1632.625" y="333"/>
+        </polygon>
+        <polygon numVertexes="4">
+          <vertex x="1403" y="332.625"/>
+          <vertex x="1475.375" y="388"/>
+          <vertex x="1475.375" y="718"/>
+          <vertex x="1402.625" y="718"/>
+        </polygon>
+      </fixture>
+    </body>
+  </bodies>
+</bodydef>
